@@ -77,9 +77,6 @@ class Configurable(object):
     def gru_hiddens(self):
         return self._config.getint('Network','gru_hiddens')
     @property
-    def mlp_arc_size(self):
-        return self._config.getint('Network', 'mlp_arc_size')
-    @property
     def mlp_rel_size(self):
         return self._config.getint('Network', 'mlp_rel_size')
     @property
@@ -97,7 +94,9 @@ class Configurable(object):
     @property
     def end_layer(self):
         return self._config.getint('Network', 'end_layer')
-
+    @property
+    def get_label(self):
+        return self._config.getint('Network','label_size')
 
     @property
     def L2_REG(self):
@@ -144,4 +143,7 @@ class Configurable(object):
         return self._config.getint('Run','update_every')
     @property
     def max_edu_len(self):
-        return self._config.getint('Run','max_edu_len')
+        return self._config.getint('Network','max_edu_len')
+    @property
+    def max_tok_len(self):
+        return self._config.getint('Network','max_tok_len')
