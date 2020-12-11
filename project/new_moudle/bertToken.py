@@ -3,7 +3,7 @@ from transformers import BertTokenizer
 class BertTokenHelper(object):
     def __init__(self,bert_dir):
         self.tokenizer = BertTokenizer.from_pretrained(bert_dir)
-        special_tokens_dict = {'additional_special_tokens':['[url]','[num]','[word]']}
+        special_tokens_dict = {'additional_special_tokens':['[url]','[num]','[word]']}#随机初始化词向量
         self.tokenizer.add_special_tokens(special_tokens_dict)
         print("Load bert vocabulary finished")
     def pad_token_id(self):

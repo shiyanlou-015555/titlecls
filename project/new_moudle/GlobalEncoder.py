@@ -54,6 +54,6 @@ class GlobalEncoder(nn.Module):
         gru_input = nn.utils.rnn.pack_padded_sequence(x_embed, edu_lengths, batch_first=True, enforce_sorted=False)
         outputs, _ = self.gru(gru_input)
         outputs,lengths = nn.utils.rnn.pad_packed_sequence(outputs, batch_first=True)
-        hidden = self.hidden_drop(outputs[0])
+        hidden = self.hidden_drop(outputs)
         # print(hidden.shape)20*500
         return x_embed, hidden

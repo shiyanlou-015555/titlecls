@@ -1,4 +1,4 @@
-from transformers.modeling_bert import *
+from transformers.modeling_bert import BertModel
 import  torch.nn as nn
 class BertExtractor(nn.Module):
     def __init__(self, config, tok_helper):
